@@ -1,1 +1,492 @@
-
+"
+S No."		"
+Test Case Name"	"
+Description"	"
+PreConditions"	"
+Test Step"	"
+Test data"		"Test case Complexity (Positive or negative)
+"	"
+Expected Result"	"
+Actual Result"	"
+Status"	Reviewed By	Comments
+	Test case Id						Priority						
+1	TC_33	"Browse Products Through Header 
+Navigation Menu"	"Verify that the user can browse products using category 
+and sub-category options from the header navigation menu."	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Select the delivery location.
+4. Hover over the desired category in the navigation menu.
+5. Verify category options are displayed.
+6. Select the required sub-category.
+7. Verify the product listing page opens.
+8. Verify relevant products are displayed.
+9. Browse the available products.
+"	"
+Location = Hyderabad
+Category = Flowers
+SubCategory = Roses
+"	High	Positive	"1. FNP website should launch successfully.
+2. Homepage should load completely without any errors.
+3. Delivery location should be selected successfully.
+4. User should be able to hover over the desired category in the navigation menu successfully.
+5. Relevant category options should be displayed successfully.
+6. User should be able to select the required sub-category successfully.
+7. Product Listing Page should open successfully.
+8. Relevant products corresponding to the selected category/sub-category should be displayed successfully.
+9. User should be able to browse the available products without any errors."		Not Executed		
+2	TC_34	"Submit Become a Vendor 
+Enquiry Form"	"Verify that the user can submit the Become a 
+Vendor enquiry form with valid details."	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Navigate to the Become a Vendor page.
+4. Enter the Name in the Name field.
+5. Enter the Mobile Number in the Mobile field.
+6. Enter the Email Address in the Email field.
+7. Select a Category from the Category dropdown.
+8. Enter the City and Area details.
+9. Enter comments in the Comment field.
+10. Click the Submit button.
+11. Verify the enquiry submission response.
+"	"
+Name = Shubham Bhardwaj
+Mobile = 9876543210
+Email = test@gmail.com
+Category = Sweets
+City = Hyderabad
+Area = Gachibowli
+Comments = Interested in becoming a vendor
+"	High	Positive	"1. FNP website should launch successfully.
+2. Homepage should load completely without any errors.
+3. User should be able to navigate to the Become a Vendor page successfully.
+4. Name should be entered successfully in the Name field.
+5. Mobile Number should be entered successfully in the Mobile field.
+6. Email Address should be entered successfully in the Email field.
+7. Selected Category should be displayed correctly in the Category dropdown.
+8. City and Area details should be accepted successfully.
+9. Comments should be entered successfully in the Comment field.
+10. User should be able to click the Submit button successfully.
+11. Vendor enquiry should be submitted successfully and an appropriate success/confirmation message should be displayed."		Not Executed		
+3	TC_35	Submit Become a Vendor Enquiry Form with Empty Name Field	Verify that the user cannot submit the Vendor enquiry form when the Name field is left blank.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Navigate to the Become a Vendor page.
+4. Leave the Name field blank.
+5. Enter the Mobile Number in the Mobile field.
+6. Enter the Email Address in the Email field.
+7. Select a Category from the Category dropdown.
+8. Enter the City and Area details.
+9. Enter comments in the Comment field.
+10. Click the Submit button.
+11. Verify the enquiry submission response.
+"	"Name = Blank
+Mobile Number = 9876543210
+Email Address = test@gmail.com
+Category = Sweets
+City = Hyderabad
+Area = Gachibowli
+Comments = Interested in becoming a vendor"	High	Negative	"1.FNP website should launch successfully.
+2.Homepage should load completely without any errors.
+3.User should be able to navigate to the Become a Vendor page successfully.
+4.Name field should remain blank.
+5.Mobile Number should be accepted successfully in the Mobile field.
+6.Email Address should be accepted successfully in the Email field.
+7.Selected Category should be displayed correctly in the Category dropdown.
+8.City and Area details should be accepted successfully.
+9.Comments should be entered successfully in the Comments field.
+10.User should be able to click the Submit button successfully.
+11.Appropriate validation message should be displayed for the Name field.
+12.Vendor enquiry form should not be submitted successfully.
+13.User should remain on the Become a Vendor page until the mandatory field is entered."		Not Executed		
+4	TC_36	Submit Become a Vendor Enquiry Form with Invalid Mobile Number (Boundary Value Analysis)	Verify that the system rejects a mobile number less than the minimum allowed length.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Navigate to the Become a Vendor page.
+4. Leave the Name field blank.
+5. Enter a 9-digit mobile number.
+6. Enter the Email Address in the Email field.
+7. Select a Category from the Category dropdown.
+8. Enter the City and Area details.
+9. Enter comments in the Comment field.
+10. Click the Submit button.
+11. Verify the enquiry submission response.
+"	"Name = Benny
+Mobile Number = 987654321
+Email Address = test@gmail.com
+Category = Sweets
+City = Hyderabad
+Area = Gachibowli
+Comments = Interested in becoming a vendor"	High	Negative	"1.FNP website should launch successfully.
+2.Homepage should load completely without any errors.
+3.User should be able to navigate to the Become a Vendor page successfully.
+4.Name should be entered successfully in the Name field.
+5.Invalid 9-digit mobile number should be entered in the Mobile field.
+6.Email Address should be accepted successfully in the Email field.
+7.Selected Category should be displayed correctly in the Category dropdown.
+8.City and Area details should be accepted successfully.
+9.Comments should be entered successfully in the Comments field.
+10.User should be able to click the Submit button successfully.
+11.Appropriate validation message should be displayed for the Mobile Number field.
+12.Form should accept only a valid 10-digit mobile number.
+13.Vendor enquiry form should not be submitted successfully."		Not Executed		
+5	TC_37	Submit Become a Franchise Owner form	Verify that the user can submit the Start an FNP Franchise enquiry form with valid details.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"1.Launch the FNP website.
+2.Wait for the homepage to load successfully.
+3.Navigate to Start an FNP Franchise page.
+4.Enter the Name in the Name field.
+5.Enter the Email Address in the Email field.
+6.Enter the Mobile Number in the Mobile field.
+7.Enter the City in the City field.
+8.Enter the query details in the Your Query field.
+9.Select an option from the Needed to Know About dropdown.
+10.Click the Submit button.
+11.Verify the franchise enquiry submission response."	"Name = Benedict
+Email Address = test@gmail.com
+Mobile Number = 9876543210
+City = Hyderabad
+Your Query = Interested in becoming a franchise owner
+Needed to Know About = Flower Shop"	High	Positive	"1.FNP website should launch successfully.
+2.Homepage should load completely without any errors.
+3.User should be able to navigate to the Start an FNP Franchise page successfully.
+4.Name should be entered successfully in the Name field.
+5.Email Address should be entered successfully in the Email field.
+6.Mobile Number should be entered successfully in the Mobile field.
+7.City should be entered successfully in the City field.
+8.Query details should be entered successfully in the Your Query field.
+9.Selected option should be displayed correctly in the Needed to Know About dropdown.
+10.User should be able to click the Submit button successfully.
+11.Franchise enquiry should be submitted successfully and an appropriate success/confirmation message should be displayed."		Not Executed		
+6	TC_38	Submit Franchise Owner Form without Selecting "Needed to Know About"	Verify that the system does not allow submission when a mandatory dropdown value is not selected.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"1.Launch the FNP website.
+2.Wait for the homepage to load successfully.
+3.Navigate to Start an FNP Franchise page.
+4.Enter the Name in the Name field.
+5.Enter the Email Address in the Email field.
+6.Enter the Mobile Number in the Mobile field.
+7.Enter the City in the City field.
+8.Enter the query details in the Your Query field.
+9.Do not select from the Needed to Know About dropdown.
+10.Click the Submit button.
+11.Verify the franchise enquiry submission response."	"Name = Benedict
+Email Address = test@gmail.com
+Mobile Number = 9876543210
+City = Hyderabad
+Your Query = Interested in becoming a franchise owner
+Needed to Know About = Null"	High	Negative	"1.FNP website should launch successfully.
+2.Homepage should load completely without any errors.
+3.User should be able to navigate to the Start an FNP Franchise page successfully.
+4.Name should be entered successfully in the Name field.
+5.Email Address should be accepted successfully in the Email field.
+6.Mobile Number should be accepted successfully in the Mobile field.
+7.City should be entered successfully in the City field.
+8.Query details should be entered successfully in the Query field.
+9.""Needed to Know About"" dropdown should remain unselected.
+10.User should be able to click the Submit button successfully.
+11.Appropriate validation message should be displayed for the dropdown field.
+12.Franchise enquiry form should not be submitted successfully.
+13.User should remain on the same page until a valid option is selected."		Not Executed		
+7	TC_39	Submit Franchise Owner Form with Mobile Number Greater than Allowed Length (Boundary Value Analysis)	Verify that the system rejects a mobile number exceeding the maximum allowed length.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"1.Launch the FNP website.
+2.Wait for the homepage to load successfully.
+3.Navigate to Start an FNP Franchise page.
+4.Enter the Name in the Name field.
+5.Enter the Email Address in the Email field.
+6.Enter the Mobile Number in the Mobile field.
+7.Enter the City in the City field.
+8.Enter the query details in the Your Query field.
+9.Select an option from the Needed to Know About dropdown.
+10.Click the Submit button.
+11.Verify the franchise enquiry submission response."	"Name = Benedict
+Email Address = test@gmail.com
+Mobile Number = 98765432111
+City = Hyderabad
+Your Query = Interested in becoming a franchise owner
+Needed to Know About = Flower Shop"	High	Negative	"1.FNP website should launch successfully.
+2.Homepage should load completely without any errors.
+3.User should be able to navigate to the Start an FNP Franchise page successfully.
+4.Name should be entered successfully in the Name field.
+5.Email Address should be accepted successfully in the Email field.
+6.Invalid 11-digit mobile number should be entered in the Mobile field.
+7.City should be entered successfully in the City field.
+8.Query details should be entered successfully in the Query field.
+9.Selected option should be displayed correctly in the Needed to Know About dropdown.
+10.User should be able to click the Submit button successfully.
+11.Appropriate validation message should be displayed for the Mobile Number field.
+12.Form should accept only a valid 10-digit mobile number.
+13.Franchise enquiry form should not be submitted successfully"		Not Executed		
+8	TC_40	"Submit Decor Service Enquiry 
+from More Menu"	"Verify that the user can submit a decor service enquiry
+ form from the More menu using valid details."	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Navigate to the More menu.
+4. Click On Birthday/Wedding decor
+5. Verify the decor service page opens successfully.
+6. Enter Name, Mobile Number, and Email Address.
+7. Select Budget from the dropdowns and input Event Type.
+8. Select the Event Date.
+9. Enter Location and Message details.
+10. Click the Submit button.
+11. Verify the enquiry submission response.
+"	"
+Name = Benny
+Mobile = 9876543210
+Email = test@gmail.com
+Budget = 1-5 Lakh
+Event Type = Birthday Party
+Event Date = 15/08/2026
+Location = Hyderabad
+Message = Theme Decoration Required
+"	High	Positive	"1. FNP website should launch successfully.
+2. Homepage should load completely without any errors.
+3. User should be able to navigate to the More menu successfully.
+4. Required decor service option should be selected successfully.
+5. Decor service page should open successfully.
+6. Name, Mobile Number, and Email Address should be accepted successfully.
+7. Selected Budget and Event Type should be displayed correctly in their respective dropdown fields.
+8. Event Date should be selected successfully.
+9. Location and Message details should be entered successfully.
+10. User should be able to click the Submit button successfully.
+11. Enquiry should be submitted successfully and an appropriate success/confirmation message should be displayed."		Not Executed		
+9	TC_41	Submit Decor Service Enquiry Form with Empty Name Field	Verify that the user cannot submit the decor service enquiry form when the Name field is left blank.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Navigate to the More menu.
+4. Click On Birthday/Wedding decor
+5. Verify the decor service page opens successfully.
+6. Leave the name field blank and enter Mobile Number, and Email Address.
+7. Select Budget from the dropdowns and input Event Type
+8. Enter the Event Date.
+9. Enter Location and Message details.
+10. Click the Submit button.
+11. Verify the enquiry submission response.
+"	"
+Name = Blank
+Mobile = 9876543210
+Email = test@gmail.com
+Budget = 1-5 Lakh
+Event Type = Birthday Party
+Event Date = 15/08/2026
+Location = Hyderabad
+Message = Theme Decoration Required
+"	High	Negative	"
+1.FNP website should launch successfully.
+2.Homepage should load completely without any errors.
+3.User should be able to navigate to the More menu successfully.
+4.Birthday/Wedding Decor should be clicked successfully.
+5.Decor Service page should open successfully.
+6.Name field should remain blank.
+7.Mobile Number and Email Address should be accepted successfully in their respective fields.
+8.Selected Budget and entered Event Type should be displayed successfully.
+9.Event Date should be accepted successfully.
+10.Location and Message details should be entered successfully.
+11.User should be able to click the Submit button successfully.
+12.Appropriate validation message should be displayed for the mandatory Name field.
+13.Decor service enquiry form should not be submitted successfully.
+14.No success/confirmation message should be displayed.
+15.User should remain on the Decor Service page until the Name field is populated with valid data."		Not Executed		
+10	TC_42	Submit Decor Service Enquiry Form with Invalid Mobile Number	Verify that the system rejects a mobile number less than the minimum allowed length.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Navigate to the More menu.
+4. Click On Birthday/Wedding decor
+5. Verify the decor service page opens successfully.
+6. Enter Name, Mobile Number, and Email Address.
+7. Select Budget from the dropdowns and input Event Type
+8. Enter the Event Date.
+9. Enter Location and Message details.
+10. Click the Submit button.
+11. Verify the enquiry submission response.
+"	"
+Name = Benny
+Mobile = 987654321
+Email = test@gmail.com
+Budget = 1-5 Lakh
+Event Type = Birthday Party
+Event Date = 15/08/2026
+Location = Hyderabad
+Message = Theme Decoration Required
+"	High	Negative	"
+1.FNP website should launch successfully.
+2.Homepage should load completely without any errors.
+3.User should be able to navigate to the More menu successfully.
+4.Birthday/Wedding Decor should be clicked successfully.
+5.Decor service page should open successfully.
+6.Name should be accepted successfully in the Name field.
+7.Invalid 9-digit Mobile Number should be entered in the Mobile field.
+8.Email Address should be accepted successfully in the Email field.
+9.Selected Budget and Event Type should be displayed correctly in their respective dropdown fields.
+10.Event Date should be selected successfully.
+11.Location and Message details should be entered successfully.
+12.User should be able to click the Submit button successfully.
+13.Appropriate validation message should be displayed for the Mobile Number field.
+14.Form should accept only a valid 10-digit mobile number.
+15.Decor service enquiry form should not be submitted successfully."		Not Executed		
+11	TC_43	"Search Product Using Header 
+Search Functionality"	"Verify that the user can search for a product using the 
+search box and open the product detail page from the search results."	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Enter the product name in the search box.
+4. Verify search suggestions are displayed.
+5. Select a suggestion from the search results.
+6. Verify the search results page opens.
+7. Verify matching products are displayed.
+8. Select a product from the search results.
+9. Verify the Product Detail Page opens successfully.
+"	Product = Red Roses	High	Positive	"1. FNP website should launch successfully.
+2. Homepage should load completely without any errors.
+3. Product name should be entered successfully in the search box.
+4. Relevant search suggestions should be displayed based on the entered product name.
+5. User should be able to select a suggestion from the search results successfully.
+6. Search Results Page should open successfully.
+7. Products matching the search keyword should be displayed successfully.
+8. User should be able to select a product from the search results successfully.
+9. Product Detail Page should open successfully with the selected product details displayed."		Not Executed		
+12	TC_44	Filter Products by Delivery Type	"
+Verify that the user can filter search results 
+based on the selected delivery type.
+"	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Search for a product.
+2. Verify the search results page opens.
+3. Open the filter options.
+4. Select the required delivery type.
+5. Apply the selected filter.
+6. Verify the product list refreshes.
+7. View the filtered products.
+8. Select the first product"	"
+Product = Flowers
+Delivery Type = Same Day Delivery
+"	High	Positive	"1. User should be able to search for the desired product successfully.
+2. Search results page should open successfully.
+3. Filter options should be accessible successfully.
+4. User should be able to select the required delivery type successfully.
+5. Selected delivery type filter should be applied successfully.
+6. Product list should refresh successfully.
+7. Filtered products should be displayed successfully.
+8. Displayed products should support the selected delivery type successfully.
+9. User should be able to review the filtered search results successfully."		Not Executed		
+13	TC_45	"Add Product to Cart from 
+Homepage Journey"	Verify that the user can search for a product, add it to the cart, and view it successfully in the cart.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Enter the product name in the search field.
+3. Select the product from the search results.
+4. Verify that the Product Detail Page opens.
+5. Select the delivery location.
+6. Select the delivery date.
+7. Click on the Add To Cart button.
+8. Open the cart page.
+9. Verify the added product in the cart.
+"	"
+Product = Red Roses
+Location = Hyderabad
+Delivery Date = 15/08/2026
+"	High	Positive	"1. FNP website should launch successfully.
+2. User should be able to search for the desired product successfully.
+3. User should be able to select a product from the search results successfully.
+4. Product Detail Page should open successfully.
+5. User should be able to select the delivery location successfully.
+6. User should be able to select a delivery date successfully.
+7. Product should be added to the cart successfully.
+8. Cart page should open successfully.
+9. Selected product should be displayed in the cart successfully."		Not Executed		
+14	TC_46	"Open Product Details from 
+Homepage Section"	"Verify that the user can open 
+a product from a homepage 
+section and access product 
+details for purchase."	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Scroll to the Best Sellers section.
+4. Select a product from the section.
+5. Verify that the Product Detail Page opens.
+6. Verify product name is displayed.
+7. Verify product price is displayed.
+8. Select a delivery date.
+9. Add an extra product
+10. Add to cart
+"	"
+Delivery Date = 15/08/2026
+Extra Product = Cake"	High	positive	"1. FNP website should launch successfully.
+2. Homepage should load successfully.
+3. Selected homepage section should be accessible successfully.
+4. User should be able to select a product successfully.
+5. Product Detail Page should open successfully.
+6. Product name should be displayed successfully.
+7. Product price should be displayed successfully.
+8. User should be able to select a delivery date successfully.
+9. User should be able to add extra products
+10. Selected product should be displayed in the cart"		Not Executed		
+15	TC_47	Explore flowers from Homepage	"Verify that the user can access and explore 
+different flowers from the homepage."	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Scroll to pick their favourite flower
+4. Click on a flower.
+5. Verify that the flower page opens successfully.
+6. Click on personalise it 
+7.Click on yes
+8. Verify flowers are displayed.
+9. Click on the first product
+"	Flower = Orchid	High	Positive	"1.FNP website should launch successfully.
+2.Homepage should load successfully.
+3.User should be able to view and select a flower category/product successfully.
+4.Selected flower page should open successfully.
+5.User should be able to access the Personalise It option successfully.
+6.Personalization options should be displayed successfully after clicking Personalise It.
+7.Upon selecting Yes, personalized flower products should be displayed successfully.
+8.Available flower products should be visible with their details.
+9.User should be able to open the first displayed flower product successfully and view its product details page."		Not Executed		
+16	TC_48	Explore Flowers from Homepage and Verify Sort Functionality	Verify that the user can browse flower products and sort the filtered results by price.	"1. Internet connection should be available.
+2. Application should be accessible in browser.
+3. Website should be up and running."	"
+1. Launch the FNP website.
+2. Wait for the homepage to load successfully.
+3. Scroll to pick their favourite flower
+4. Click on a flower.
+5. Verify that the flower page opens successfully.
+6. Click on personalise it 
+7.Click on yes
+8. Verify flowers are displayed.
+9. Click on sort by
+10.Verify that the flower products are sorted correctly.
+11.Open the first displayed flower product."	"Flower = Orchid
+Sort By: Price low to high"	High	Positive	"1.FNP website should launch successfully.
+2.Homepage should load successfully.
+3.User should be able to view and select a flower category/product successfully.
+4.Selected flower page should open successfully.
+5.User should be able to access the Personalise It filter successfully.
+6.Personalise It filter options (Yes/No) should be displayed successfully.
+7.Upon selecting Yes, only personalized flower products should be displayed successfully.
+8.User should be able to access the Sort By option successfully.
+9.Upon selecting Price: Low to High, flower products should be sorted successfully in ascending order of price.
+10.Available flower products should be visible with their details.
+11.User should be able to open the first displayed flower product successfully and view its product details page."		Not Executed		
