@@ -1,0 +1,458 @@
+package runner;
+
+import java.awt.Desktop;
+import java.io.File;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
+import pages.HomePage;
+import utils.Base;
+import utils.ExecutionProgressBar;
+import utils.ProgressListener;
+import utils.Reporter;
+import org.testng.ITestResult;
+import org.testng.annotations.Listeners;
+
+//@Listeners(ProgressListener.class)
+public class TestFNP extends Base {
+
+    ExtentTest extentTest;
+    ExtentReports extentReport;
+
+    @BeforeSuite
+    public void initializeReport() {
+        extentReport = Reporter.generateExtentReport("FNP_Report");
+        ExecutionProgressBar.initialize(13);
+    }
+
+    @BeforeMethod
+    public void launchBrowser() {
+        openBrowser();
+    }
+
+    @Test(enabled = true, priority = 1)
+    public void test01VerifyOTPPopupAfterValidRegistration() {
+        extentTest = extentReport.createTest("Test case 1");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("validName");
+        homePageObject.verifyElementAfterDataEntry("validName");
+        homePageObject.clickOnElement("countryDropDown");
+        homePageObject.clickOnElement("indiaDropDown");
+        homePageObject.verifyElementAfterClick("indiaDropDown");
+        homePageObject.clickOnElement("number");
+        homePageObject.enterDataIntoElement("validNumber");
+        homePageObject.verifyElementAfterDataEntry("validNumber");
+        homePageObject.clickOnElement("startGifting");
+        homePageObject.verifyElementAfterClick("startGifting");
+
+        homePageObject.captureScreenshotAndLog("TC01_OTP");
+    }
+
+    @Test(enabled = false, priority = 2)
+    public void test02VerifyValidEmailEntry() {
+        extentTest = extentReport.createTest("Test case 2");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.verifyElementAfterClick("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.verifyElementAfterDataEntry("validEmail");
+        homePageObject.clickOnElement("outsideEmail");
+        homePageObject.verifyElementAfterClick("outsideEmail");
+        homePageObject.verifyElementAfterDataEntry("validEmail");
+
+        homePageObject.captureScreenshotAndLog("TC02_ValidEmail");
+    }
+
+    @Test(enabled = false, priority = 3)
+    public void test03VerifyValidNameEntry() {
+        extentTest = extentReport.createTest("Test case 3");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("validName");
+        homePageObject.verifyElementAfterDataEntry("validName");
+        homePageObject.clickOnElement("countryDropDown");
+        homePageObject.verifyElementAfterClick("countryDropDown");
+
+        homePageObject.captureScreenshotAndLog("TC03_ValidName");
+    }
+
+    @Test(enabled = false, priority = 4)
+    public void test04VerifyCountrySelection() {
+        extentTest = extentReport.createTest("Test case 4");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("validName");
+        homePageObject.verifyElementAfterDataEntry("validName");
+        homePageObject.clickOnElement("countryDropDown");
+        homePageObject.verifyElementAfterClick("countryDropDown");
+        homePageObject.clickOnElement("indiaDropDown");
+        homePageObject.verifyElementAfterClick("indiaDropDown");
+
+        homePageObject.captureScreenshotAndLog("TC04_Country");
+    }
+
+    @Test(enabled = false, priority = 5)
+    public void test05VerifyValidMobileNumber() {
+        extentTest = extentReport.createTest("Test case 5");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("validName");
+        homePageObject.verifyElementAfterDataEntry("validName");
+        homePageObject.clickOnElement("countryDropDown");
+        homePageObject.clickOnElement("indiaDropDown");
+        homePageObject.verifyElementAfterClick("indiaDropDown");
+        homePageObject.clickOnElement("number");
+        homePageObject.enterDataIntoElement("validNumber");
+        homePageObject.verifyElementAfterDataEntry("validNumber");
+
+        homePageObject.captureScreenshotAndLog("TC05_ValidNumber");
+    }
+
+    @Test(enabled = false, priority = 6)
+    public void test06VerifyStartGiftingEnabled() {
+        extentTest = extentReport.createTest("Test case 6");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("validName");
+        homePageObject.verifyElementAfterDataEntry("validName");
+        homePageObject.clickOnElement("countryDropDown");
+        homePageObject.clickOnElement("indiaDropDown");
+        homePageObject.verifyElementAfterClick("indiaDropDown");
+        homePageObject.clickOnElement("number");
+        homePageObject.enterDataIntoElement("validNumber");
+        homePageObject.verifyElementAfterDataEntry("validNumber");
+        homePageObject.clickOnElement("startGifting");
+        homePageObject.verifyElementAfterClick("startGifting");
+
+        homePageObject.captureScreenshotAndLog("TC06_StartGifting");
+    }
+
+    @Test(enabled = false, priority = 7)
+    public void test07VerifyInvalidEmailValidation() {
+        extentTest = extentReport.createTest("Test case 7");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.verifyElementAfterClick("email");
+        homePageObject.enterDataIntoElement("invalidEmailNoDomain");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyValidationMessage("invalidEmail");
+
+        homePageObject.captureScreenshotAndLog("TC07_InvalidEmail");
+    }
+
+    @Test(enabled = false, priority = 8)
+    public void test08VerifyEmailWithoutDomainValidation() {
+        extentTest = extentReport.createTest("Test case 8");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.verifyElementAfterClick("email");
+        homePageObject.enterDataIntoElement("invalidEmailOnlyAt");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyValidationMessage("invalidEmail");
+
+        homePageObject.captureScreenshotAndLog("TC08_EmailNoDomain");
+    }
+
+    @Test(enabled = false, priority = 9)
+    public void test09VerifyEmailWithoutExtensionValidation() {
+        extentTest = extentReport.createTest("Test case 9");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.verifyElementAfterClick("email");
+        homePageObject.enterDataIntoElement("invalidEmailNoExtension");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyValidationMessage("invalidEmail");
+
+        homePageObject.captureScreenshotAndLog("TC09_EmailNoExtension");
+    }
+
+    @Test(enabled = false, priority = 10)
+    public void test10VerifyBlankEmailValidation() {
+        extentTest = extentReport.createTest("Test case 10");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.verifyElementAfterClick("email");
+        homePageObject.enterDataIntoElement("blankEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyValidationMessage("invalidEmail");
+
+        homePageObject.captureScreenshotAndLog("TC10_BlankEmail");
+    }
+
+    @Test(enabled = false, priority = 11)
+    public void test11VerifyBlankNameValidation() {
+        extentTest = extentReport.createTest("Test case 11");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("blankName");
+        homePageObject.clickOnElement("startGifting");
+        homePageObject.verifyValidationMessage("blankName");
+
+        homePageObject.captureScreenshotAndLog("TC11_BlankName");
+    }
+
+    @Test(enabled = false, priority = 12)
+    public void test12VerifySpecialCharactersInName() {
+        extentTest = extentReport.createTest("Test case 12");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("specialName");
+        homePageObject.verifyElementAfterDataEntry("specialName");
+        homePageObject.clickOnElement("countryDropDown");
+
+        homePageObject.captureScreenshotAndLog("TC12_SpecialName");
+    }
+
+    @Test(enabled = false, priority = 13)
+    public void test13VerifyMobileAcceptsOnlyNumeric() {
+        extentTest = extentReport.createTest("Test case 13");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("validName");
+        homePageObject.verifyElementAfterDataEntry("validName");
+        homePageObject.clickOnElement("countryDropDown");
+        homePageObject.clickOnElement("indiaDropDown");
+        homePageObject.verifyElementAfterClick("indiaDropDown");
+        homePageObject.clickOnElement("number");
+        homePageObject.enterDataIntoElement("alphaNumber");
+        homePageObject.verifyElementAfterDataEntry("alphaNumber");
+
+        homePageObject.captureScreenshotAndLog("TC13_AlphaNumber");
+    }
+
+    @Test(enabled = false, priority = 14)
+    public void test14VerifyMobileNumberRejectsAlphanumeric() {
+        extentTest = extentReport.createTest("Test case 14");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("validName");
+        homePageObject.verifyElementAfterDataEntry("validName");
+        homePageObject.clickOnElement("countryDropDown");
+        homePageObject.clickOnElement("indiaDropDown");
+        homePageObject.verifyElementAfterClick("indiaDropDown");
+        homePageObject.clickOnElement("number");
+        homePageObject.enterDataIntoElement("alphaNumber");
+        homePageObject.clickOnElement("startGifting");
+        homePageObject.verifyValidationMessage("alphaNumber");
+
+        homePageObject.captureScreenshotAndLog("TC14_AlphaNumber");
+    }
+
+    @Test(enabled = false, priority = 15)//not working
+    public void test15VerifyIncorrectOTPError() {
+        extentTest = extentReport.createTest("Test case 15");
+
+        HomePage homePageObject = new HomePage(webDriver, extentTest);
+
+        homePageObject.clickOnElement("popup");
+        homePageObject.verifyElementAfterClick("popup");
+        homePageObject.clickOnElement("hiGuest");
+        homePageObject.verifyElementAfterClick("hiGuest");
+        homePageObject.clickOnElement("loginReg");
+        homePageObject.verifyElementAfterClick("loginReg");
+        homePageObject.clickOnElement("email");
+        homePageObject.enterDataIntoElement("validEmail");
+        homePageObject.clickOnElement("clickContinue");
+        homePageObject.verifyElementAfterClick("clickContinue");
+        homePageObject.clickOnElement("name");
+        homePageObject.enterDataIntoElement("validName");
+        homePageObject.verifyElementAfterDataEntry("validName");
+        homePageObject.clickOnElement("countryDropDown");
+        homePageObject.clickOnElement("indiaDropDown");
+        homePageObject.verifyElementAfterClick("indiaDropDown");
+        homePageObject.clickOnElement("number");
+        homePageObject.enterDataIntoElement("validNumber");
+        homePageObject.verifyElementAfterDataEntry("validNumber");
+        homePageObject.clickOnElement("startGifting");
+        homePageObject.verifyElementAfterClick("startGifting");
+        homePageObject.clickOnElement("otpField");
+        homePageObject.enterDataIntoElement("incorrectOtp");
+        homePageObject.clickOnElement("verifyOtpButton");
+        homePageObject.verifyValidationMessage("incorrectOtp");
+
+        homePageObject.captureScreenshotAndLog("TC15_IncorrectOTP");
+    }
+    
+    public static int count = 0;
+
+    @AfterMethod
+    public void updateProgress(ITestResult result) {
+    	count++;
+
+    	  ExecutionProgressBar.updateProgress(
+    	   count,
+    	   result.getMethod().getMethodName() + " Completed");
+        webDriver.quit();
+        
+    }
+
+    @AfterSuite
+    public void flushReport() {
+        extentReport.flush();
+        ExecutionProgressBar.complete();
+
+        try {
+
+         Desktop.getDesktop().open(new File(System.getProperty("user.dir") + "/reports"));
+
+        } catch (Exception e) {
+         e.printStackTrace();
+        }
+    }
+}
